@@ -12,6 +12,12 @@ void subtraction(long int no1,long int no2)
     printf("%ld", no1 - no2);
 }
 
+// Function for multiplication of two numbers
+void multiplication(long int no1,long int no2)
+{
+    printf("%ld", no1 * no2);
+}
+
 int main(void)
 {
     // Taking input from user
@@ -26,7 +32,7 @@ int main(void)
 
 // Asking user that which operation he want to perform
 
-    printf("Enter code of the operation needed:\n 1. Add \t 2. Subtract \n");
+    printf("Enter code of the operation needed:\n 1. Add \t 2. Subtract \t 3. Multiply \n");
     int check;
     scanf("%d", &check);
 
@@ -37,6 +43,9 @@ int main(void)
         break;
     case 2:
         subtraction(no1, no2);
+        break;
+    case 3:
+        multiplication(no1, no2);
         break;
     }
 }
