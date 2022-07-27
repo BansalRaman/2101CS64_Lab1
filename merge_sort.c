@@ -1,8 +1,8 @@
-/* C program for Merge Sort */
 #include <stdio.h>
 #include <stdlib.h>
 
 // Merges two subarrays of arr[].
+
 // First subarray is arr[l..m]
 // Second subarray is arr[m+1..r]
 void merge(int arr[], int l, int m, int r)
@@ -11,10 +11,10 @@ void merge(int arr[], int l, int m, int r)
 	int n1 = m - l + 1;
 	int n2 = r - m;
 
-	/* create temp arrays */
+	// create temp arrays 
 	int L[n1], R[n2];
 
-	/* Copy data to temp arrays L[] and R[] */
+	// Copy data to temp arrays L[] and R[] 
 	for (i = 0; i < n1; i++)
 		L[i] = arr[l + i];
 	for (j = 0; j < n2; j++)
@@ -36,16 +36,14 @@ void merge(int arr[], int l, int m, int r)
 		k++;
 	}
 
-	/* Copy the remaining elements of L[], if there
-	are any */
+	// Copy the remaining elements of L[], if there are any 
 	while (i < n1) {
 		arr[k] = L[i];
 		i++;
 		k++;
 	}
 
-	/* Copy the remaining elements of R[], if there
-	are any */
+	// Copy the remaining elements of R[], if there are any 
 	while (j < n2) {
 		arr[k] = R[j];
 		j++;
@@ -53,8 +51,7 @@ void merge(int arr[], int l, int m, int r)
 	}
 }
 
-/* l is for left index and r is right index of the
-sub-array of arr to be sorted */
+// l is for left index and r is right index of the sub-array of arr to be sorted 
 void mergeSort(int arr[], int l, int r)
 {
 	if (l < r) {
@@ -70,28 +67,36 @@ void mergeSort(int arr[], int l, int r)
 	}
 }
 
-/* UTILITY FUNCTIONS */
 /* Function to print an array */
-void printArray(int A[], int size)
+void printArray(int arr[], int size)
 {
 	int i;
 	for (i = 0; i < size; i++)
-		printf("%d ", A[i]);
+		printf("%d ", arr[i]);
 	printf("\n");
 }
 
 /* Driver code */
 int main()
 {
-	int arr[] = { 12, 11, 13, 5, 6, 7 };
-	int arr_size = sizeof(arr) / sizeof(arr[0]);
+	// Taking input from user
+
+	printf("Enter Size of array:\n");
+	int n;
+	scanf("%d",&n);
+	printf("Enter Array:\n");
+	int arr[n];
+
+	for(int i=0;i<n;i++){
+		scanf("%d",&arr[i]);
+	}
 
 	printf("Given array is \n");
-	printArray(arr, arr_size);
+	printArray(arr, n);
 
-	mergeSort(arr, 0, arr_size - 1);
+	mergeSort(arr, 0, n - 1);
 
 	printf("\nSorted array is \n");
-	printArray(arr, arr_size);
+	printArray(arr, n);
 	return 0;
 }
